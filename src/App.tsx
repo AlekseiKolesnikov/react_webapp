@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
-import getData from "./data/getData";
+import './App.scss';
+import {GameChoiceButtons} from "./components/GameChoiceButtons";
 
 function App() {
   return (
-      <div className={"wrapper _button"}>
-          {getData}
+      <div className={"wrapper"}>
+          <GameChoiceButtons/>
       </div>
   );
 }
