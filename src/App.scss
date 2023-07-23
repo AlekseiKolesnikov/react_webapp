@@ -2,7 +2,7 @@
 
 $mouse-device: '(hover:hover) and (pointer: fine)';
 
-.buttons {
+.buttons_container {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -15,12 +15,12 @@ $mouse-device: '(hover:hover) and (pointer: fine)';
   justify-content: space-between;
 }
 
-.buttons__button_container {
+.button_container {
   width: 100%;
   height: 40%;
 
 
-  .buttons__button {
+  .button_container_button {
     &:hover {
       @media #{$mouse-device} {
         cursor: pointer;
