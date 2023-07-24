@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.scss';
-import {GameChoiceButtons} from "./components/GameChoiceButtons";
+import {GameChoiceButtonsComponent} from "./components/GameChoiceButtonsComponent/GameChoiceButtonsComponent";
 
 function App() {
   return (
       <div className={"wrapper"}>
-          <GameChoiceButtons/>
+          <GameChoiceButtonsComponent/>
       </div>
   );
 }
