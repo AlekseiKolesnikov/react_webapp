@@ -9,13 +9,13 @@ export function GameChoiceButtonsComponent() {
     return (
         <div className={"buttons_container _container"}>
             <ButtonComponent onClick={() => {
-                setConditionMemory(true)
+                setConditionMemory((state) => !state)
             }}>
                 Мемори
             </ButtonComponent>
 
             <ButtonComponent onClick={() => {
-                setConditionHangman(true)
+                setConditionHangman((state) => !state)
             }}>
                 Виселица
             </ButtonComponent>

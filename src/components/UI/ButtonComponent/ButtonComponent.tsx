@@ -2,8 +2,8 @@ import React, {ReactNode} from 'react';
 import './ButtonComponent.scss';
 
 interface Button {
-    children: ReactNode
-    onClick: any
+    children: ReactNode,
+    onClick: () => void,
 }
 
 export const ButtonComponent = ({children, ...props}: Button) => {
