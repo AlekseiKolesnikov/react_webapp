@@ -1,21 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import {ButtonComponent} from "../UI/ButtonComponent/ButtonComponent";
 import './GameChoiceButtonsComponent.scss';
 
 export function GameChoiceButtonsComponent() {
-    const [conditionMemory, setConditionMemory] = useState(false);
-    const [conditionHagman, setConditionHangman] = useState(false);
+    const navigation = useNavigate()
 
     return (
         <div className={"buttons_container _container"}>
             <ButtonComponent onClick={() => {
-                setConditionMemory((state) => !state)
+                navigation('../pages/memoryGameField/memoryGameField.tsx');
             }}>
                 Мемори
             </ButtonComponent>
 
             <ButtonComponent onClick={() => {
-                setConditionHangman((state) => !state)
+                navigation('../pages/hangmanLevelsChoice/hangmanLevelsChoice.tsx');
             }}>
                 Виселица
             </ButtonComponent>
