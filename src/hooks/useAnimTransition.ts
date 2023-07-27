@@ -23,7 +23,8 @@ const UseAnimTransition = (action: string, location: Location) => {
 
     return {
         onAnimationEnd,
-        displayLocation
+        displayLocation,
+        action
     }
 };
 

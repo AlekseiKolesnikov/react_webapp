@@ -4,13 +4,12 @@ import '../../styles/transition_animation/transition_animation.scss';
 import useAnimTransition from "../../hooks/useAnimTransition";
 
 const GameChoiceButtonsComponent = () => {
-    let action = 'fadeIn';
     const navigation = useNavigate();
     const location = useLocation();
-    const animation = useAnimTransition(action, location);
+    const animation = useAnimTransition('fadeIn', location);
 
     return (
-        <div className={`choose_game _buttons_flex_container ${action}`}
+        <div className={`choose_game _buttons_flex_container ${animation.action = 'fadeIn'}`}
              onAnimationEnd={() => {
                  animation.onAnimationEnd()
              }}>
