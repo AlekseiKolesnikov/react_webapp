@@ -1,31 +1,31 @@
-import React, {useEffect, useTransition} from 'react';
-import {useLocation, useNavigate} from 'react-router-dom';
+import {Routes, useLocation, useNavigate} from 'react-router-dom';
 import ButtonComponent from "../UI/ButtonComponent/ButtonComponent";
+import '../../styles/transition_animation/transition_animation.scss';
+import useAnimTransition from "../../hooks/useAnimTransition";
 
 const GameChoiceButtonsComponent = () => {
-    const [isPending, startTransition] = useTransition();
-    const location = useLocation();
+    let action = 'fadeIn';
     const navigation = useNavigate();
-
-    useEffect(() => {
-
-    }, [location])
+    const location = useLocation();
+    const animation = useAnimTransition(action, location);
 
     return (
-            <div style={{height: '20vh'}} className={"_buttons_flex_container"}>
+        <div className={`choose_game _buttons_flex_container ${action}`}
+             onAnimationEnd={() => {
+                 animation.onAnimationEnd()
+             }}>
             <ButtonComponent
-                style={{height: '70%'}}
                 onClick={() => {
-                navigation('/');
-            }}
+                    navigation('/memory_levels');
+                }}
             >Мемори</ButtonComponent>
 
             <ButtonComponent
-                style={{height: '70%'}}
                 onClick={() => {
-                navigation('/hangman_levels');
-            }}
+                    navigation('/hangman_levels');
+                }}
             >Виселица</ButtonComponent>
+            <Routes location={animation.displayLocation}/>
         </div>
     )
 }

@@ -3,15 +3,13 @@ import './ButtonComponent.scss';
 
 interface Button {
     children: ReactNode,
-    style: object
-    onClick: () => void,
+    onClick: () => void
 }
 
 const ButtonComponent = ({children, ...props}: Button) => {
 
     return (
-        <div className={"button_container _button_container"}
-             style={{...props.style}}>
+        <div className={"button_container _button_container"}>
             <button
                 {...props}
                 className={"button_container_button "}>

@@ -7,23 +7,20 @@ const HangmanLevels = () => {
     const navigation = useNavigate();
 
     return (
-        <div style={{height: '30vh'}} className={"_buttons_flex_container"}>
+        <div style={{height: '30vh'}} className={"choose_level _buttons_flex_container"}>
             <ButtonComponent
-                style={{height: '40%'}}
                 onClick={() => {
                     navigation('/')
                 }}
             >Сложный Уровень</ButtonComponent>
 
             <ButtonComponent
-                style={{height: '40%'}}
                 onClick={() => {
                 navigation('/')
             }}
             >Средний Уровень</ButtonComponent>
 
             <ButtonComponent
-                style={{height: '40%'}}
                 onClick={() => {
                 navigation('/')
             }}
