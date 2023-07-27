@@ -1,13 +1,24 @@
 import React from 'react';
 import './App.scss';
-import {GameChoiceButtonsComponent} from "./components/GameChoiceButtonsComponent/GameChoiceButtonsComponent";
-import {Routes, Route} from "react-router-dom";
+import GameChoiceButtonsComponent from "./components/GameChoiceButtonsComponent/GameChoiceButtonsComponent";
+import {Route, Routes} from "react-router-dom";
+import HangmanLevels from "./pages/hangman_levels/HangmanLevels";
+import MemoryLevels from "./pages/memory_levels/MemoryLevels";
 
-function App() {
+const App = () => {
   return (
-      
       <div className={"wrapper"}>
-          <GameChoiceButtonsComponent/>
+          <Routes>
+              <Route path="/games"
+                     element={<GameChoiceButtonsComponent />}>
+              </Route>
+              <Route path="/hangman_levels"
+                     element={<HangmanLevels />}>
+              </Route>
+              <Route path="/memory_levels"
+                     element={<MemoryLevels />}>
+              </Route>
+          </Routes>
       </div>
   );
 }

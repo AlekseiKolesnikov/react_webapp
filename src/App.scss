@@ -12,6 +12,18 @@
   text-align: center;
 }
 
+._buttons_flex_container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+}
+
 .wrapper {
   color: var(--tg-theme-text-color);
   min-height: 100%;

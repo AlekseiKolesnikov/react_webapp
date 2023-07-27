@@ -1,25 +1,33 @@
-import React from 'react';
-import {useNavigate} from 'react-router-dom';
-import {ButtonComponent} from "../UI/ButtonComponent/ButtonComponent";
-import './GameChoiceButtonsComponent.scss';
+import React, {useEffect, useTransition} from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
+import ButtonComponent from "../UI/ButtonComponent/ButtonComponent";
 
-export function GameChoiceButtonsComponent() {
-    const navigation = useNavigate()
+const GameChoiceButtonsComponent = () => {
+    const [isPending, startTransition] = useTransition();
+    const location = useLocation();
+    const navigation = useNavigate();
+
+    useEffect(() => {
+
+    }, [location])
 
     return (
-        <div className={"buttons_container _container"}>
-            <ButtonComponent onClick={() => {
-                navigation('../pages/memoryGameField/memoryGameField.tsx');
-            }}>
-                Мемори
-            </ButtonComponent>
+            <div style={{height: '20vh'}} className={"_buttons_flex_container"}>
+            <ButtonComponent
+                style={{height: '70%'}}
+                onClick={() => {
+                navigation('/');
+            }}
+            >Мемори</ButtonComponent>
 
-            <ButtonComponent onClick={() => {
-                navigation('../pages/hangmanLevelsChoice/hangmanLevelsChoice.tsx');
-            }}>
-                Виселица
-            </ButtonComponent>
+            <ButtonComponent
+                style={{height: '70%'}}
+                onClick={() => {
+                navigation('/hangman_levels');
+            }}
+            >Виселица</ButtonComponent>
         </div>
     )
 }
 
+export default GameChoiceButtonsComponent;
