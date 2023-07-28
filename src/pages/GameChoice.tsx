@@ -1,9 +1,9 @@
 import {useLocation, useNavigate} from 'react-router-dom';
-import ButtonComponent from "../UI/ButtonComponent/ButtonComponent";
-import '../../styles/transition_animation.scss';
+import Button from "../components/UI/Button";
+import '../styles/Transition.scss';
 import {useEffect, useRef} from "react";
 
-const GameChoiceButtonsComponent = () => {
+const GameChoice = () => {
     const navigation = useNavigate();
     const location = useLocation();
     const renderTransition = useRef('fadeIn')
@@ -14,19 +14,19 @@ const GameChoiceButtonsComponent = () => {
 
     return (
         <div className={`choose_game _buttons_flex_container ${renderTransition.current}`}>
-            <ButtonComponent
+            <Button
                 onClick={() => {
                     navigation('/memory_levels');
                 }}
-            >Мемори</ButtonComponent>
+            >Мемори</Button>
 
-            <ButtonComponent
+            <Button
                 onClick={() => {
                     navigation('/hangman_levels');
                 }}
-            >Виселица</ButtonComponent>
+            >Виселица</Button>
         </div>
     )
 }
 
-export default GameChoiceButtonsComponent;
+export default GameChoice;

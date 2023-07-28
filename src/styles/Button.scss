@@ -13,7 +13,7 @@ $mouse-device: '(hover:hover) and (pointer: fine)';
     }
 
     &:active {
-      animation: squeeze 0.05s ease-in;
+      animation: squeeze 0.05s ease-out;
       animation-fill-mode: forwards;
     }
 

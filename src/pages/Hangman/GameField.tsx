@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GameFieldComponent = () => {
+const GameField = () => {
     return (
         <div className={"game _game_container"}>
             <div className={"game_field"}>
@@ -10,4 +10,4 @@ const GameFieldComponent = () => {
     )
 }
 
-export default GameFieldComponent;
+export default GameField;

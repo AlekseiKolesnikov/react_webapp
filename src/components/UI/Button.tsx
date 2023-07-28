@@ -1,12 +1,12 @@
 import React, {ReactNode} from 'react';
-import './ButtonComponent.scss';
+import '../../styles/Button.scss';
 
 interface Button {
     children: ReactNode,
     onClick: () => void
 }
 
-const ButtonComponent = ({children, ...props}: Button) => {
+const Button = ({children, ...props}: Button) => {
 
     return (
         <div className={"button_container _button_container"}>
@@ -19,4 +19,4 @@ const ButtonComponent = ({children, ...props}: Button) => {
     )
 }
 
-export default ButtonComponent;
+export default Button;

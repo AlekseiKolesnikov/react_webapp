@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import './App.scss';
-import GameChoiceButtonsComponent from "./components/GameChoiceButtonsComponent/GameChoiceButtonsComponent";
+import './styles/App.scss';
+import GameChoice from "./pages/GameChoice";
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
-import HangmanLevels from "./pages/hangman_levels/HangmanLevels";
-import MemoryLevels from "./pages/memory_levels/MemoryLevels";
-import HangmanPlayground from "./pages/hangman_playground/HangmanPlayground";
-import MemoryPlayground from "./pages/memory_playground/MemoryPlayground";
+import HangmanLevels from "./pages/Hangman/HangmanLevels";
+import MemoryLevels from "./pages/Memory/MemoryLevels";
+import HangmanPlayground from "./pages/Hangman/HangmanPlayground";
+import MemoryPlayground from "./pages/Memory/MemoryPlayground";
 
 const App = () => {
     const location = useLocation();
@@ -28,21 +28,11 @@ const App = () => {
     return (
         <div className={"wrapper"}>
             <Routes>
-                <Route path="/games"
-                       element={<GameChoiceButtonsComponent/>}>
-                </Route>
-                <Route path="/hangman_levels"
-                       element={<HangmanLevels/>}>
-                </Route>
-                <Route path="/memory_levels"
-                       element={<MemoryLevels/>}>
-                </Route>
-                <Route path="/hangman_game"
-                       element={<HangmanPlayground/>}>
-                </Route>
-                <Route path="/memory_game"
-                       element={<MemoryPlayground/>}>
-                </Route>
+                <Route path="/games" element={<GameChoice/>} />
+                <Route path="/hangman_levels" element={<HangmanLevels/>} />
+                <Route path="/memory_levels" element={<MemoryLevels/>} />
+                <Route path="/hangman_game/:level" element={<HangmanPlayground/>} />
+                <Route path="/memory_game/:level" element={<MemoryPlayground/>} />
             </Routes>
         </div>
     );
