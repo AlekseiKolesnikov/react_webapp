@@ -1,6 +1,6 @@
 import {useLocation, useNavigate} from 'react-router-dom';
 import ButtonComponent from "../UI/ButtonComponent/ButtonComponent";
-import '../../styles/transition_animation/transition_animation.scss';
+import '../../styles/transition_animation.scss';
 import {useEffect, useRef} from "react";
 
 const GameChoiceButtonsComponent = () => {

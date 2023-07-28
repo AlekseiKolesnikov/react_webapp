@@ -14,15 +14,20 @@ const HangmanLevels = () => {
         renderTransition.current = 'fadeOut'
     }, [location])
 
+    const createWord = (minLength: number, maxLength: number): void => {
+
+    }
+
     return (
         <div style={{height: '30vh'}}
              className={`choose_level _buttons_flex_container ${renderTransition.current}`}>
             <ButtonComponent
                 onClick={() => {
                     // getWordLength()
+                    createWord(maxWordLength, minWordLength)
                     setMinWordLength(9)
                     setMaxWordLength(11)
-                    navigation('/')
+                    navigation('/hangman_game')
                 }}
             >Сложный Уровень</ButtonComponent>
 
@@ -30,7 +35,7 @@ const HangmanLevels = () => {
                 onClick={() => {
                     setMinWordLength(6)
                     setMaxWordLength(8)
-                    navigation('/')
+                    navigation('/hangman_game')
                 }}
             >Средний Уровень</ButtonComponent>
 
@@ -38,7 +43,7 @@ const HangmanLevels = () => {
                 onClick={() => {
                     setMinWordLength(0)
                     setMaxWordLength(5)
-                    navigation('/')
+                    navigation('/hangman_game')
                 }}
             >Лёгкий Уровень</ButtonComponent>
         </div>
