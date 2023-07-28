@@ -1,7 +1,10 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="18d2f28c-b6cf-3fa1-974a-8f933a3f46a2" enabled="true" level="INFORMATION" enabled_by_default="true" editorAttributes="INFORMATION_ATTRIBUTES">
+      <scope name="All Changed Files" level="INFORMATION" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="Eslint" enabled="false" level="INFORMATION" enabled_by_default="false" />
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
@@ -18,5 +21,12 @@
       </option>
       <option name="myCustomValuesEnabled" value="true" />
     </inspection_tool>
+    <inspection_tool class="JSUnresolvedReference" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <searchConfiguration name="Telegram Global Method" text="Telegram" recursive="true" caseInsensitive="false" type="TypeScript">
+        <constraint name="__context__" within="" contains="" />
+      </searchConfiguration>
+    </inspection_tool>
+    <inspection_tool class="TypeScriptValidateJSTypes" enabled="true" level="INFORMATION" enabled_by_default="true" />
   </profile>
 </component>

@@ -17,12 +17,6 @@ const App = () => {
         }
     }, [location])
 
-    useEffect(() => {
-        Telegram.WebApp.BackButton.onClick(() => {
-            navigation(-1)
-        })
-    })
-
   return (
       <div className={"wrapper"}>
           <Routes>
