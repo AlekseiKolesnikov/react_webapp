@@ -31,7 +31,7 @@ const App = () => {
                 <Route path="/games" element={<GameChoice/>} />
                 <Route path="/hangman_levels" element={<HangmanLevels/>} />
                 <Route path="/memory_levels" element={<MemoryLevels/>} />
-                <Route path="/hangman_game/:level" element={<HangmanPlayground/>} />
+                <Route path="/hangman_game/:level" element={<HangmanPlayground />} />
                 <Route path="/memory_game/:level" element={<MemoryPlayground/>} />
             </Routes>
         </div>

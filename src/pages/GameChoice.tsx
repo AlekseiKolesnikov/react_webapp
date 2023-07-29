@@ -1,5 +1,5 @@
 import {useLocation, useNavigate} from 'react-router-dom';
-import Button from "../components/UI/Button";
+import Button from "../components/ui/Button";
 import '../styles/Transition.scss';
 import {useEffect, useRef} from "react";
 

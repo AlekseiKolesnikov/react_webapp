@@ -1,5 +1,5 @@
-import React, {useEffect, useRef, useState} from 'react';
-import Button from "../../components/UI/Button";
+import React, {useEffect, useRef} from 'react';
+import Button from "../../components/ui/Button";
 import {useLocation, useNavigate} from "react-router-dom";
 import '../../styles/Hangman/HangmanLevels.scss'
 import getWord from "../../lib/getWord";
