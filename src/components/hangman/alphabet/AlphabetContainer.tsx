@@ -8,7 +8,11 @@ interface HangmanDataProps {
 
 const AlphabetContainer = (props: HangmanDataProps) => {
     return (
-        <div>
+        <div style={{
+            width: "90%",
+            height: "40%",
+            border: "solid black"
+        }}>
             {props.hangmanData.alphabet.map(letter => {
                 return <AlphabetLetter letter={letter} key={letter}/>
             })}

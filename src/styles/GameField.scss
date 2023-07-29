@@ -1,9 +1,6 @@
 .playground {
-  position: relative;
-  width: 90%;
-  height: 70%;
-}
-
-.game_field {
-
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
 }
