@@ -6,6 +6,7 @@ import HangmanLevels from "./pages/Hangman/HangmanLevels";
 import MemoryLevels from "./pages/Memory/MemoryLevels";
 import HangmanPlayground from "./pages/Hangman/HangmanPlayground";
 import MemoryPlayground from "./pages/Memory/MemoryPlayground";
+import {Telegram} from "telegram-web-app-for-bot";
 
 const App = () => {
     const location = useLocation();
@@ -13,14 +14,14 @@ const App = () => {
 
     useEffect(() => {
         if (location.pathname === '/games') {
-            Telegram.WebApp.BackButton.hide()
+            Telegram.BackButton.hide()
         } else {
-            Telegram.WebApp.BackButton.show()
+            Telegram.BackButton.show()
         }
     }, [location])
 
     useEffect(() => {
-        Telegram.WebApp.BackButton.onClick(() => {
+        Telegram.BackButton.onClick(() => {
             navigation(-1)
         })
     })
