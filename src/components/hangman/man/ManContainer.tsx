@@ -5,7 +5,7 @@ const ManContainer = () => {
         <div style={{
             position: "relative",
             width: "90%",
-            height: "40%",
+            height: "45%",
             border: "solid black"
         }}>
 

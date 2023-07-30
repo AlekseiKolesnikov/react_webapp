@@ -13,7 +13,8 @@ const GameChoice = () => {
     }, [location])
 
     return (
-        <div className={`choose_game _buttons_flex_container ${renderTransition.current}`}>
+        <div style={{height: "20vh"}}
+            className={`_buttons_flex_container ${renderTransition.current}`}>
             <Button
                 onClick={() => {
                     navigation('/memory_levels');

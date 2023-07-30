@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import Button from "../../components/ui/Button";
 import {useLocation, useNavigate} from "react-router-dom";
-import '../../styles/Hangman/HangmanLevels.scss'
 import getWord from "../../lib/getWord";
 
 const HangmanLevels = () => {
@@ -21,7 +20,7 @@ const HangmanLevels = () => {
 
     return (
         <div style={{height: '30vh'}}
-             className={`choose_level _buttons_flex_container ${renderTransition.current}`}>
+             className={`_buttons_flex_container ${renderTransition.current}`}>
             <Button
                 onClick={() => {
                     console.log(getWord());

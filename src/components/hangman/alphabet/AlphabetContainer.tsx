@@ -10,8 +10,10 @@ const AlphabetContainer = (props: HangmanDataProps) => {
     return (
         <div style={{
             width: "90%",
-            height: "40%",
-            border: "solid black"
+            height: "35%",
+            border: "solid black",
+            display: "flex",
+            flexDirection: ""
         }}>
             {props.hangmanData.alphabet.map(letter => {
                 return <AlphabetLetter letter={letter} key={letter}/>

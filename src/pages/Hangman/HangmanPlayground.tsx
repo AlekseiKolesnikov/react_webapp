@@ -13,7 +13,7 @@ const HangmanPlayground = () => {
 
 
     return (
-        <div className={"playground _game_container"}>
+        <div className={"_game_container"}>
             <ManContainer/>
             <WordContainer/>
             <AlphabetContainer hangmanData={hangmanData}/>
