@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import Button from "../../components/ui/Button";
 import {useLocation, useNavigate} from "react-router-dom";
 import getWord from "../../lib/getWord";
+import {Telegram} from "telegram-web-app-for-bot";
 
 const HangmanLevels = () => {
     const location = useLocation();

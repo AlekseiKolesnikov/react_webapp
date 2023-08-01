@@ -1,19 +1,19 @@
 import React from 'react';
 import AlphabetLetter from "./AlphabetLetter";
 import {IHangmanData} from "../../../types/IHangmanData";
+import hangmanData from "../../../data/hangmanData";
 
 interface HangmanDataProps {
     hangmanData: IHangmanData
 }
 
-const style: object = {
+const style = {
     width: "90%",
-    height: "35%",
-    border: "solid black",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "start",
-    flexWrap: "wrap"
+    height: "33%",
+    display: "grid",
+    gridTemplate: "repeat(4, 1fr) / repeat(7, 1fr)",
+    columnGap: "2%",
+    rowGap: "3%"
 }
 
 const AlphabetContainer = (props: HangmanDataProps) => {

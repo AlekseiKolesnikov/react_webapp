@@ -12,7 +12,7 @@ const Button = ({children, ...props}: Button) => {
         <div className={"button_container _button_container"}>
             <button
                 {...props}
-                className={"button_container_button "}>
+                className={"button_container_button"}>
                 {children}
             </button>
         </div>
