@@ -7,6 +7,7 @@ import MemoryLevels from "./pages/Memory/MemoryLevels";
 import HangmanPlayground from "./pages/Hangman/HangmanPlayground";
 import MemoryPlayground from "./pages/Memory/MemoryPlayground";
 import {Telegram} from "telegram-web-app-for-bot";
+import LoaderPage from "./pages/Loader/LoaderPage";
 
 const App = () => {
     const location = useLocation();
@@ -32,8 +33,8 @@ const App = () => {
                     <Route path="/games" element={<GameChoice/>}/>
                     <Route path="/hangman_levels" element={<HangmanLevels/>}/>
                     <Route path="/memory_levels" element={<MemoryLevels/>}/>
-                    <Route path="/hangman_game/:level" element={<HangmanPlayground/>}/>
-                    <Route path="/memory_game/:level" element={<MemoryPlayground/>}/>
+                    <Route path="/loader/:level" element={<LoaderPage/>}/>
+                    <Route path="/memory_game" element={<MemoryPlayground/>}/>
                 </Routes>
         </div>
     );
