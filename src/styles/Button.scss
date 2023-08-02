@@ -57,8 +57,8 @@ $mouse-device: '(hover:hover) and (pointer: fine)';
   font-family: Tektur, sans-serif;
   font-size: 16px;
   background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-button-text-color);
-  border: 0.15em var(--tg-theme-button-text-color) solid;
+  color: var(--tg-theme-text-color);
+  border: 0.15em var(--tg-theme-text-color) solid;
   border-radius: 0.4em;
 }
 

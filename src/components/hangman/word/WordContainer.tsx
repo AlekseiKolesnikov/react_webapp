@@ -5,8 +5,7 @@ const WordContainer = () => {
         <div style={{
             position: "relative",
             width: "90%",
-            height: "10%",
-            border: "solid black"
+            height: "15%"
         }}>
 
         </div>

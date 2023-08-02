@@ -1,15 +1,14 @@
 import React from 'react';
 import AlphabetLetter from "./AlphabetLetter";
 import {IHangmanData} from "../../../types/IHangmanData";
-import hangmanData from "../../../data/hangmanData";
 
-interface HangmanDataProps {
+export interface HangmanDataProps {
     hangmanData: IHangmanData
 }
 
 const style = {
     width: "90%",
-    height: "33%",
+    height: "31%",
     display: "grid",
     gridTemplate: "repeat(4, 1fr) / repeat(7, 1fr)",
     columnGap: "2%",

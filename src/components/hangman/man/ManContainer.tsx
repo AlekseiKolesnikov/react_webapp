@@ -1,14 +1,18 @@
 import React from 'react';
+import {HangmanDataProps} from "../alphabet/AlphabetContainer";
+import BodyParts from "./BodyParts";
+import './../../../styles/Hangman.scss';
 
-const ManContainer = () => {
+const ManContainer = (props: HangmanDataProps) => {
     return (
         <div style={{
             position: "relative",
             width: "90%",
-            height: "47%",
-            border: "solid black"
+            height: "44%"
         }}>
-
+            {props.hangmanData.hangman.map(item => {
+                return <BodyParts item={item} key={item}/>
+            })}
         </div>
     );
 };
