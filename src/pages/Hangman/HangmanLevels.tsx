@@ -1,20 +1,13 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Button from "../../components/ui/Button";
 import {useLocation, useNavigate} from "react-router-dom";
-import useSwitch from "../../hooks/useSwitch";
+import useRenderTransition from "../../hooks/transition";
 
 const HangmanLevels = () => {
     const location = useLocation();
-    const [context, setContext] = useSwitch();
     const navigation = useNavigate();
-    const renderTransition = useRef('fadeIn');
+    const renderTransition = useRenderTransition('fadeIn', location);
     const [level, setLevel] = useState('');
-    const increment = () => setContext((context: boolean) => !context);
-
-    useEffect(() => {
-        renderTransition.current = 'fadeOut'
-    }, [location])
-
 
     useEffect(() => {
         if (level !== '') {
@@ -24,11 +17,10 @@ const HangmanLevels = () => {
 
     return (
         <div style={{height: '30vh'}}
-             className={`_buttons_flex_container ${renderTransition.current}`}>
+             className={`_buttons_flex_container ${renderTransition}`}>
             <Button
                 onClick={() => {
                     setLevel('hard');
-                    increment()
                 }}
             >Сложный Уровень</Button>
 

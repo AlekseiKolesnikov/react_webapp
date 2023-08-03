@@ -32,10 +32,8 @@ const App = () => {
             <Routes>
                 <Route path="/games" element={<GameChoice/>}/>
                 <Route path="/memory_levels" element={<MemoryLevels/>}/>
-                <GameProvider>
-                    <Route path="/hangman_levels" element={<HangmanLevels/>}/>
-                    <Route path="/loader/:level" element={<SwitchLoading/>}/>
-                </GameProvider>
+                <Route path="/hangman_levels" element={<HangmanLevels/>}/>
+                <Route path="/loader/:level" element={<SwitchLoading/>}/>
                 <Route path="/memory_game" element={<MemoryPlayground/>}/>
             </Routes>
         </div>

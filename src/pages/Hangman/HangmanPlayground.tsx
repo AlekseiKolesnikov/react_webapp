@@ -4,7 +4,7 @@ import WordContainer from "../../components/hangman/word/WordContainer";
 import ManContainer from "../../components/hangman/man/ManContainer";
 import AlphabetContainer from "../../components/hangman/alphabet/AlphabetContainer";
 import hangmanData from "../../data/hangmanData";
-import {MainButton} from "@vkruglikov/react-telegram-web-app";
+import {MainButton} from "telegram-web-app-for-bot/dist/reactjs";
 
 const HangmanPlayground = (word: { word: string }) => {
     console.log(word)
@@ -13,7 +13,8 @@ const HangmanPlayground = (word: { word: string }) => {
             <ManContainer hangmanData={hangmanData}/>
             <WordContainer/>
             <AlphabetContainer hangmanData={hangmanData}/>
-            <MainButton text={"Закончить Игру"}/>
+            <MainButton onClick={() => {}}
+                        text={"Закончить Игру"}/>
         </div>
     );
 };
