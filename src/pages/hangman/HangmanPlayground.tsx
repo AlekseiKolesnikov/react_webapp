@@ -7,7 +7,6 @@ import hangmanData from "../../data/hangmanData";
 import {MainButton} from "telegram-web-app-for-bot/dist/reactjs";
 
 const HangmanPlayground = (word: { word: string }) => {
-    console.log(word)
     return (
         <div className={"_game_container"}>
             <ManContainer hangmanData={hangmanData}/>

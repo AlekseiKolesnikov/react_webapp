@@ -1,10 +1,8 @@
 import {configureStore} from "@reduxjs/toolkit";
-import {randomWordApi} from "./random_word/random_word_api";
+import todoReducer from './random_word/wordSlice';
 
 export const store = configureStore({
     reducer: {
-        [randomWordApi.reducerPath]: randomWordApi.reducer
+        word: todoReducer,
     },
-    middleware: getDefaultMiddleware =>
-        getDefaultMiddleware().concat(randomWordApi.middleware)
 })

@@ -1,19 +1,20 @@
-import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import {createAsyncThunk} from "@reduxjs/toolkit";
 
-export const randomWordApi = createApi({
-    reducerPath: 'random_word/api',
-    baseQuery: fetchBaseQuery({
-        baseUrl: 'https://random-word-api.herokuapp.com/'
-    }),
-    endpoints: build => ({
-        getWord: build.query<string, string[]>({
-            query: (word: string[]) => ({
-                url: 'word',
-                params: word
-            }),
-            transformResponse: (response: string[]) => response[0]
-        })
-    })
-})
+const url = 'https://random-word-api.herokuapp.com/word';
 
-export const {useGetWordQuery} = randomWordApi
+export const fetchRandomWord: any = createAsyncThunk(
+    'word/fetchRandomWord',
+    async function (level, {rejectWithValue}) {
+        try {
+            const response = await fetch(url)
+
+            if (!response.ok) {
+                throw new Error('Server Error!')
+            }
+
+            return await response.json();
+        } catch (error: any) {
+            return rejectWithValue(error.message)
+        }
+    }
+)

@@ -2,12 +2,11 @@ import React, {useEffect} from 'react';
 import './styles/App.scss';
 import GameChoice from "./pages/GameChoice";
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
-import HangmanLevels from "./pages/Hangman/HangmanLevels";
-import MemoryLevels from "./pages/Memory/MemoryLevels";
-import MemoryPlayground from "./pages/Memory/MemoryPlayground";
+import HangmanLevels from "./pages/hangman/HangmanLevels";
+import MemoryLevels from "./pages/memory/MemoryLevels";
+import MemoryPlayground from "./pages/memory/MemoryPlayground";
 import {Telegram} from "telegram-web-app-for-bot";
 import SwitchLoading from "./pages/SwitchLoading";
-import {GameProvider} from "./hooks/useSwitch";
 
 const App = () => {
     const location = useLocation();

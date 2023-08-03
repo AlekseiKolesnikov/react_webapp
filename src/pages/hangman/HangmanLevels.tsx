@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Button from "../../components/ui/Button";
 import {useLocation, useNavigate} from "react-router-dom";
-import useRenderTransition from "../../hooks/transition";
+import useRenderTransition from "../../hooks/useRenderTransition";
 
 const HangmanLevels = () => {
     const location = useLocation();
@@ -11,7 +11,7 @@ const HangmanLevels = () => {
 
     useEffect(() => {
         if (level !== '') {
-            navigation(`/loader/${level}}`)
+            navigation(`/loader/${level}`)
         }
     }, [level]);
 

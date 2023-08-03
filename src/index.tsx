@@ -10,10 +10,10 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 root.render(
-    <Provider store={store}>
-        <MemoryRouter initialEntries={['/games']}>
+    <MemoryRouter initialEntries={['/games']}>
+        <Provider store={store}>
             <App/>
-        </MemoryRouter>
-    </Provider>
+        </Provider>
+    </MemoryRouter>
 );
 

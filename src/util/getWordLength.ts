@@ -1,10 +1,7 @@
-
-
-
 let maxLength: number = 10;
 let minLength: number = 0;
 
-const getWordLength = (level: string): [number, number] => {
+const getWordLength = (level: string | undefined): [number, number] => {
     if (level === 'hard') {
         maxLength = 11;
         minLength = 9;
