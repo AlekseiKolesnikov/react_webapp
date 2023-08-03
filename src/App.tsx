@@ -4,10 +4,10 @@ import GameChoice from "./pages/GameChoice";
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import HangmanLevels from "./pages/Hangman/HangmanLevels";
 import MemoryLevels from "./pages/Memory/MemoryLevels";
-import HangmanPlayground from "./pages/Hangman/HangmanPlayground";
 import MemoryPlayground from "./pages/Memory/MemoryPlayground";
 import {Telegram} from "telegram-web-app-for-bot";
-import LoaderPage from "./pages/Loader/LoaderPage";
+import SwitchLoading from "./pages/SwitchLoading";
+import {GameProvider} from "./hooks/useSwitch";
 
 const App = () => {
     const location = useLocation();
@@ -29,13 +29,15 @@ const App = () => {
 
     return (
         <div className={"wrapper"}>
-                <Routes>
-                    <Route path="/games" element={<GameChoice/>}/>
+            <Routes>
+                <Route path="/games" element={<GameChoice/>}/>
+                <Route path="/memory_levels" element={<MemoryLevels/>}/>
+                <GameProvider>
                     <Route path="/hangman_levels" element={<HangmanLevels/>}/>
-                    <Route path="/memory_levels" element={<MemoryLevels/>}/>
-                    <Route path="/loader/:level" element={<LoaderPage/>}/>
-                    <Route path="/memory_game" element={<MemoryPlayground/>}/>
-                </Routes>
+                    <Route path="/loader/:level" element={<SwitchLoading/>}/>
+                </GameProvider>
+                <Route path="/memory_game" element={<MemoryPlayground/>}/>
+            </Routes>
         </div>
     );
 }

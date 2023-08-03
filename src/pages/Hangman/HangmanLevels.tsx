@@ -1,41 +1,43 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Button from "../../components/ui/Button";
 import {useLocation, useNavigate} from "react-router-dom";
+import useSwitch from "../../hooks/useSwitch";
 
 const HangmanLevels = () => {
     const location = useLocation();
+    const [context, setContext] = useSwitch();
     const navigation = useNavigate();
     const renderTransition = useRef('fadeIn');
-
-    const level = {
-        hard: 'hard',
-        medium: 'medium',
-        easy: 'easy'
-    }
+    const [level, setLevel] = useState('');
+    const increment = () => setContext((context: boolean) => !context);
 
     useEffect(() => {
         renderTransition.current = 'fadeOut'
     }, [location])
+
+
+    useEffect(() => {
+        if (level !== '') {
+            navigation(`/loader/${level}}`)
+        }
+    }, [level]);
 
     return (
         <div style={{height: '30vh'}}
              className={`_buttons_flex_container ${renderTransition.current}`}>
             <Button
                 onClick={() => {
-                    navigation(`/loader/${level.hard}`)
+                    setLevel('hard');
+                    increment()
                 }}
             >Сложный Уровень</Button>
 
             <Button
-                onClick={() => {
-                    navigation(`/loader/${level.medium}`)
-                }}
+                onClick={() => setLevel('medium')}
             >Средний Уровень</Button>
 
             <Button
-                onClick={() => {
-                    navigation(`/loader/${level.easy}`)
-                }}
+                onClick={() => setLevel('easy')}
             >Лёгкий Уровень</Button>
         </div>
     )
