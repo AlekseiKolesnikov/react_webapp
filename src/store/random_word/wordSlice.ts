@@ -1,27 +1,33 @@
-import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {fetchRandomWord} from "./random_word_api";
-import {WordAction, WordState} from "../../types/IWordSlice";
+import {WordState} from "../../types/WordState";
 
-const wordSlice = createSlice<WordState, WordAction>({
+const initialState: WordState = {
+    word: '',
+    status: null,
+    error: null
+}
+
+const wordSlice = createSlice({
     name: 'word',
-    initialState: {
-        word: '',
-        status: null,
-        error: null
-    },
+    initialState,
     reducers: {
 
     },
-    extraReducers: {
-        [fetchRandomWord.pending]: (state, action) => {
-            state.status = 'loading';
-            state.error = null;
-        },
-        [fetchRandomWord.fulfilled]: (state, action) => {
-            state.status = 'resolved';
-            state.word = action.payload;
-        },
-        [fetchRandomWord.rejected]: (state, action) => {}
+    extraReducers: (builder) => {
+        builder
+            .addCase(fetchRandomWord.pending, (state) => {
+                state.status = 'loading';
+                state.error = null;
+            })
+            .addCase(fetchRandomWord.fulfilled, (state, action) => {
+                state.status = 'resolved';
+                state.word = action.payload;
+            })
+            .addCase(fetchRandomWord.rejected, (state, action) => {
+                state.status = 'rejected';
+                state.error = action.payload;
+            });
     }
 })
 

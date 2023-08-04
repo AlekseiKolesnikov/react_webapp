@@ -2,19 +2,18 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 
 const url = 'https://random-word-api.herokuapp.com/word';
 
-export const fetchRandomWord: any = createAsyncThunk(
+export const fetchRandomWord = createAsyncThunk<string, undefined, { rejectValue: string }>(
     'word/fetchRandomWord',
-    async function (level, {rejectWithValue}) {
-        try {
-            const response = await fetch(url)
+    async function (_, {rejectWithValue}) {
+        const response = await fetch(url)
 
-            if (!response.ok) {
-                throw new Error('Server Error!')
-            }
-
-            return await response.json();
-        } catch (error: any) {
-            return rejectWithValue(error.message)
+        if (!response.ok) {
+            return rejectWithValue('Server Error!')
         }
+
+        const data: string = await response.json();
+
+        console.log(data)
+        return data
     }
 )

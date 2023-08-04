@@ -1,21 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Loader from "../components/ui/Loader";
 import HangmanPlayground from "./hangman/HangmanPlayground";
 import {useParams} from "react-router-dom";
-import useDepend from "../hooks/useDepend";
+import setWordLength from "../store/random_word/set_word_length";
+import {useAppDispatch, useAppSelector} from "../types/hooks";
+import {fetchRandomWord} from "../store/random_word/random_word_api";
 
 const SwitchLoading = () => {
     const {level} = useParams();
-    const [loading, setLoading] = useState(true);
-    const dependence = useDepend(level);
+    const loading = useAppSelector((state) => state.word.status);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-        setLoading(false)
-    }, [dependence]);
+        dispatch(fetchRandomWord());
+    }, [dispatch]);
 
     return (
         <div>
-            {loading ? <Loader/> : <HangmanPlayground word={`${level}`}/>}
+            {(loading === "loading") ? <Loader/> : <HangmanPlayground word={`${level}`}/>}
         </div>
     );
 };
