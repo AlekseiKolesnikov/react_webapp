@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import Loader from "../components/ui/Loader";
 import HangmanPlayground from "./hangman/HangmanPlayground";
 import {useParams} from "react-router-dom";
-import setWordLength from "../store/random_word/set_word_length";
 import {useAppDispatch, useAppSelector} from "../types/hooks";
 import {fetchRandomWord} from "../store/random_word/random_word_api";
 
